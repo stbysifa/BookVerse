@@ -19,5 +19,3 @@ Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/stbysifa/BookVerse.git
-
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
