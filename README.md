@@ -1,11 +1,21 @@
-Project Overview:
-BookVerse is a simple web-based eBook reader that allows users to read books in a clean, interactive environment. It provides an intuitive user interface for navigating through books, adjusting font sizes, and changing background colors for a better reading experience.
+# BookVerse - eBook Reader
 
-Technologies Used:
-HTML: For creating the basic structure of the web pages.
+BookVerse is an online eBook reader that lets users read books directly in their browser. It is built with HTML, CSS, Tailwind CSS, and JavaScript. The app allows users to navigate through pages, adjust font size, and change the background color for an optimal reading experience.
 
-CSS: For styling the pages and making them visually appealing.
+## Features
+- Read books directly from the browser
+- Navigate between pages (Previous/Next)
+- Adjust font size for readability
+- Change background color for comfort
 
-Tailwind CSS: A utility-first CSS framework for rapid styling and customization.
+## Technologies Used
+- HTML
+- CSS (Tailwind CSS)
+- JavaScript
 
-JavaScript: For interactivity like changing pages, adjusting font sizes, and changing background colors.
+## Installation Instructions
+
+Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/stbysifa/BookVerse.git
