@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookVerse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header class="border-b dark:border-gray-700">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between items-center relative"
+      >
+        <!-- Left nav -->
+        <div class="flex space-x-4 mb-2 md:mb-0">
+          <a
+            href="#"
+            class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1"
+            >Home</a
+          >
+          <a href="about.html" class="hover:text-blue-600">About</a>
+        </div>
+
+        <!-- Logo Center -->
+        <div
+          class="text-xl font-bold mb-2 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2"
+        >
+          📚 BookVerse
+        </div>
+
+        <!-- Right side -->
+        <div class="flex space-x-3 items-center">
+          <!-- Toggle Switch -->
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              id="darkToggle"
+              class="sr-only peer"
+              onchange="toggleDarkMode()"
+            />
+            <div
+              class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 dark:bg-gray-700 rounded-full peer dark:peer-checked:bg-blue-600 peer-checked:bg-blue-600 transition-all duration-300"
+            ></div>
+            <div
+              class="absolute left-1 top-1 bg-white dark:bg-gray-300 w-4 h-4 rounded-full transition-all duration-300 peer-checked:translate-x-5"
+            ></div>
+          </label>
+          <a
+            href="#login"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+            >Sign Up / Login</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- Hero Section with Background Image -->
+    <section
+      class="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
+      style="
+        background-image: url('https://images.pexels.com/photos/2228561/pexels-photo-2228561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      "
+    >
+      <!-- Overlay with Blur -->
+      <div
+        class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-md p-6 rounded-lg text-center mx-4 max-w-2xl"
+      >
+        <h1
+          class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white"
+        >
+          Read. Relax. Repeat.
+        </h1>
+        <p class="text-base sm:text-lg text-gray-800 dark:text-gray-200">
+          BookVerse is your online ebook reader built for comfort, flexibility,
+          and readability — right in your browser.
+        </p>
+        <h3 class="mt-4 text-red-700 font-bold text-2xl">THIS WEBAPP IS UNDER DEVELOPMENT</h3>
+      </div>
+    </section>
+
+    <!-- Technologies Used -->
+    <section
+      class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+    >
+      <!-- Card 1 -->
+      <div
+        class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center border dark:border-gray-700"
+      >
+        <h2 class="text-xl font-semibold mb-2">HTML</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          Builds the structure and layout of the application.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center border dark:border-gray-700"
+      >
+        <h2 class="text-xl font-semibold mb-2">Tailwind CSS</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          Utility-first CSS framework for fast, responsive UI development.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 text-center border dark:border-gray-700"
+      >
+        <h2 class="text-xl font-semibold mb-2">JavaScript</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          Adds interactivity, navigation, and customization to the reader.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    // Check localStorage for theme preference on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem('theme');
+      const toggle = document.getElementById("darkToggle");
+
+      if (savedTheme) {
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+          toggle.checked = true;
+        } else {
+          document.documentElement.classList.remove("dark");
+          toggle.checked = false;
+        }
+      }
+    });
+    </script>
+  </body>
+</html>
