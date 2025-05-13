@@ -53,17 +53,18 @@
               class="absolute left-1 top-1 bg-white dark:bg-gray-300 w-4 h-4 rounded-full transition-all duration-300 peer-checked:translate-x-5"
             ></div>
           </label>
-          <a
-            href="#login"
+          <!-- Sign Up / Login Button -->
+          <button
+            id="popupBtn"
             class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
-            >Sign Up / Login</a
           >
+            Login
+          </button>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <!-- Hero Section with Background Image -->
     <section
       class="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
       style="
@@ -83,7 +84,9 @@
           BookVerse is your online ebook reader built for comfort, flexibility,
           and readability — right in your browser.
         </p>
-        <h3 class="mt-4 text-red-700 font-bold text-2xl">THIS WEBAPP IS UNDER DEVELOPMENT</h3>
+        <h3 class="mt-4 text-red-700 font-bold text-2xl">
+          THIS WEBAPP IS UNDER DEVELOPMENT
+        </h3>
       </div>
     </section>
 
@@ -122,28 +125,139 @@
       </div>
     </section>
 
-    <!-- Dark Mode Toggle Script -->
+    <!-- Signup/Login Popup Modal -->
+    <div
+      id="authModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+    >
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full relative"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeModal"
+          class="absolute top-2 right-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100"
+        >
+          ✖
+        </button>
+        <!-- Only Login Form -->
+        <h2
+          class="text-xl font-semibold mb-4 text-center text-gray-900 dark:text-white"
+        >
+          Login
+        </h2>
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <div
+              id="errorMsg"
+              class="text-red-500 text-center hidden mt-2"
+            ></div>
+            <label class="block mb-1" for="loginEmail">Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div>
+            <label class="block mb-1" for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts for modal behavior -->
     <script>
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    // Check localStorage for theme preference on page load
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem('theme');
-      const toggle = document.getElementById("darkToggle");
-
-      if (savedTheme) {
-        if (savedTheme === "dark") {
-          document.documentElement.classList.add("dark");
-          toggle.checked = true;
-        } else {
-          document.documentElement.classList.remove("dark");
-          toggle.checked = false;
-        }
+      // Toggle theme
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
       }
-    });
+
+      // Apply saved theme on load
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        const toggle = document.getElementById("darkToggle");
+        if (savedTheme) {
+          if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+            toggle.checked = true;
+          } else {
+            document.documentElement.classList.remove("dark");
+            toggle.checked = false;
+          }
+        }
+
+        // Show login modal
+        const popupBtn = document.getElementById("popupBtn");
+        const authModal = document.getElementById("authModal");
+        const closeModal = document.getElementById("closeModal");
+        const loginForm = document.getElementById("loginForm");
+
+        popupBtn.addEventListener("click", () => {
+          authModal.classList.remove("hidden");
+        });
+
+        closeModal.addEventListener("click", () => {
+          authModal.classList.add("hidden");
+        });
+
+        // Handle login form submission
+        loginForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          errorMsg.classList.add("hidden");
+          errorMsg.innerText = "";
+          const email = document.getElementById("loginEmail").value.trim();
+          const password = document
+            .getElementById("loginPassword")
+            .value.trim();
+
+          try {
+            // Fetch user data from JSON file
+            const response = await fetch("data/userInfo.json");
+            if (!response.ok) {
+              throw new Error("Failed to load user data");
+            }
+            const users = await response.json();
+            // Check if user exists with matching email and password
+            const user = users.find(
+              (u) => u.userEmail === email && u.userPassword === password
+            );
+
+            if (user) {
+              localStorage.setItem('loggedInUser', JSON.stringify(user));
+              alert("Login successful! Redirecting...");
+              window.location.href = "dashboard.html";
+            } else {
+              // No match found
+              errorMsg.innerText = "Invalid email or password.";
+              errorMsg.classList.remove("hidden");
+            }
+          } catch (err) {
+            errorMsg.innerText = "An error occurred. Please try again.";
+            errorMsg.classList.remove("hidden");
+            console.error(err);
+          }
+        });
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-gray-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Style Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Hide scrollbar for all browsers */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col bg-gray-900 text-gray-100 font-sans p-4"
+  >
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">My Dashboard</h1>
+      <div class="flex space-x-4 items-center">
+        <button
+          onclick="toggleTheme()"
+          class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition"
+        >
+          Toggle Theme
+        </button>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="pl-10 pr-4 py-2 rounded bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          />
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
+            <svg
+              class="w-5 h-5 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-4-4m0 0A7 7 0 104 4a7 7 0 0013 13z"
+              />
+            </svg>
+          </div>
+        </div>
+        <img
+          src="https://via.placeholder.com/40"
+          alt="Profile"
+          class="w-10 h-10 rounded-full"
+        />
+      </div>
+    </header>
+
+    <!-- Content Sections -->
+    <main class="space-y-8">
+      <!-- Example Carousel -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Recent Added</h2>
+        <div class="relative group">
+          <!-- Carousel Container -->
+          <div
+            id="recentAdded"
+            class="flex hide-scrollbar overflow-x-auto scrollbar-hide space-x-4 px-2"
+          >
+            <!-- Sample Items -->
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 1"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 1</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 2</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/256x144"
+                class="w-full h-36 object-cover"
+                alt="Item 3"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Item 3</h3>
+                <p class="text-sm text-gray-400">Description</p>
+              </div>
+            </div>
+            <!-- Add more items as needed -->
+          </div>
+          <!-- Left Button -->
+          <button
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
+            onclick="scrollCarousel('recentAdded', -1)"
+          >
+            <!-- Left Arrow SVG -->
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <!-- Right Button -->
+          <button
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
+            onclick="scrollCarousel('recentAdded', 1)"
+          >
+            <!-- Right Arrow SVG -->
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Repeat other sections similarly -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Continue Reading</h2>
+        <div class="relative group">
+          <div
+            id="continueReading"
+            class="flex hide-scrollbar overflow-x-auto scrollbar-hide space-x-4 px-2"
+          >
+            <div
+              class="flex-shrink-0 w-48 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/200x120"
+                class="w-full h-40 object-cover"
+                alt="Book 1"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Book 1</h3>
+                <p class="text-sm text-gray-400">Author</p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 w-48 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            >
+              <img
+                src="https://via.placeholder.com/200x120"
+                class="w-full h-40 object-cover"
+                alt="Book 2"
+              />
+              <div class="p-3">
+                <h3 class="text-lg font-semibold mb-2">Book 2</h3>
+                <p class="text-sm text-gray-400">Author</p>
+              </div>
+            </div>
+          </div>
+          <!-- Buttons -->
+          <button
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
+            onclick="scrollCarousel('continueReading', -1)"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
+            onclick="scrollCarousel('continueReading', 1)"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Add more sections as needed -->
+    </main>
+
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+        document.body.classList.toggle("bg-gray-900");
+        document.body.classList.toggle("text-gray-100");
+      }
+
+      // Carousel scroll with looping
+      function scrollCarousel(id, direction) {
+        const container = document.getElementById(id);
+        const scrollAmount = 300; // pixels
+        const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+        let newScroll = container.scrollLeft + direction * scrollAmount;
+
+        if (newScroll > maxScrollLeft) {
+          newScroll = 0; // Loop to start
+        } else if (newScroll < 0) {
+          newScroll = maxScrollLeft; // Loop to end
+        }
+
+        container.scrollTo({ left: newScroll, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+[
+    {
+      "uid": "1",
+      "userName": "stbysifa",
+      "userFirstName": "Sifa",
+      "userLastName": "Tandel",
+      "userEmail": "sifatandel@example.com",
+      "userPassword": "password123",
+      "userProfileUrl": "https://example.com/profiles/johndoe.jpg"
+    },
+    {
+      "uid": "2",
+      "userName": "janeSmith",
+      "userFirstName": "Jane",
+      "userLastName": "Smith",
+      "userEmail": "jane.smith@example.com",
+      "userPassword": "securepass456",
+      "userProfileUrl": "https://example.com/profiles/janesmith.jpg"
+    },
+    {
+      "uid": "3",
+      "userName": "michaelBrown",
+      "userFirstName": "Michael",
+      "userLastName": "Brown",
+      "userEmail": "michael.brown@example.com",
+      "userPassword": "pass789",
+      "userProfileUrl": "https://example.com/profiles/michaelbrown.jpg"
+    },
+    {
+      "uid": "4",
+      "userName": "emilyDavis",
+      "userFirstName": "Emily",
+      "userLastName": "Davis",
+      "userEmail": "emily.davis@example.com",
+      "userPassword": "mypassword",
+      "userProfileUrl": "https://example.com/profiles/emilydavis.jpg"
+    },
+    {
+      "uid": "5",
+      "userName": "willJohnson",
+      "userFirstName": "Will",
+      "userLastName": "Johnson",
+      "userEmail": "will.johnson@example.com",
+      "userPassword": "abc12345",
+      "userProfileUrl": "https://example.com/profiles/willjohnson.jpg"
+    }
+  ]
