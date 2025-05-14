@@ -1,0 +1,117 @@
+[
+  {
+    "uid": "user001",
+    "bookInfo": [
+      {
+        "bookId": "BK001",
+        "readList": true,
+        "startReadDate": "2023-07-01",
+        "completed": false,
+        "currentPage": 120,
+        "notes": "Engaging story, eager to see the ending.",
+        "liked": true
+      },
+      {
+        "bookId": "BK005",
+        "readList": true,
+        "startReadDate": "2023-06-15",
+        "completed": true,
+        "currentPage": 370,
+        "notes": "Loved the recipes!",
+        "liked": true
+      }
+    ]
+  },
+  {
+    "uid": "user002",
+    "bookInfo": [
+      {
+        "bookId": "BK010",
+        "readList": true,
+        "startReadDate": "2023-05-10",
+        "completed": false,
+        "currentPage": 50,
+        "notes": "Beautiful poetry collection.",
+        "liked": true
+      },
+      {
+        "bookId": "BK014",
+        "readList": false,
+        "startReadDate": null,
+        "completed": false,
+        "currentPage": 0,
+        "notes": "",
+        "liked": false
+      }
+    ]
+  },
+  {
+    "uid": "user003",
+    "bookInfo": [
+      {
+        "bookId": "BK003",
+        "readList": true,
+        "startReadDate": "2023-04-20",
+        "completed": false,
+        "currentPage": 200,
+        "notes": "Mystery is gripping.",
+        "liked": true
+      },
+      {
+        "bookId": "BK007",
+        "readList": false,
+        "startReadDate": null,
+        "completed": false,
+        "currentPage": 0,
+        "notes": "",
+        "liked": false
+      }
+    ]
+  },
+  {
+    "uid": "user004",
+    "bookInfo": [
+      {
+        "bookId": "BK015",
+        "readList": true,
+        "startReadDate": "2023-02-10",
+        "completed": true,
+        "currentPage": 340,
+        "notes": "Romantic and touching.",
+        "liked": true
+      },
+      {
+        "bookId": "BK011",
+        "readList": true,
+        "startReadDate": "2023-01-05",
+        "completed": false,
+        "currentPage": 100,
+        "notes": "Travel stories are inspiring.",
+        "liked": false
+      }
+    ]
+  },
+  {
+    "uid": "user005",
+    "bookInfo": [
+      {
+        "bookId": "BK020",
+        "readList": true,
+        "startReadDate": "2023-07-20",
+        "completed": false,
+        "currentPage": 60,
+        "notes": "Great tips for cooking.",
+        "liked": true
+      },
+      {
+        "bookId": "BK025",
+        "readList": false,
+        "startReadDate": null,
+        "completed": false,
+        "currentPage": 0,
+        "notes": "",
+        "liked": false
+      }
+    ]
+  }
+]
