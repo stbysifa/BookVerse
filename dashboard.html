@@ -66,18 +66,21 @@
       <!-- Example Carousel -->
       <section>
         <h2 class="text-xl font-semibold mb-4">Recent Added</h2>
-        <div class="relative group">
+        <!-- Carousel Container -->
+        <div class="relative group mb-8">
           <!-- Carousel Container -->
-          <div id="recently-added" class="flex gap-4 flex-wrap">
+          <div
+            id="recently-added"
+            class="flex hide-scrollbar overflow-x-auto scrollbar-hide space-x-4 px-2"
+          >
             <!-- Book cards will be appended here -->
           </div>
 
-          <!-- Left Button -->
+          <!-- Left Arrow -->
           <button
             class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
-            onclick="scrollCarousel('recentAdded', -1)"
+            onclick="scrollCarousel('recently-added', -1)"
           >
-            <!-- Left Arrow SVG -->
             <svg
               class="w-6 h-6 text-white"
               fill="none"
@@ -92,12 +95,12 @@
               />
             </svg>
           </button>
-          <!-- Right Button -->
+
+          <!-- Right Arrow -->
           <button
             class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
-            onclick="scrollCarousel('recentAdded', 1)"
+            onclick="scrollCarousel('recently-added', 1)"
           >
-            <!-- Right Arrow SVG -->
             <svg
               class="w-6 h-6 text-white"
               fill="none"
@@ -200,7 +203,6 @@
         document.body.classList.toggle("text-gray-100");
       }
 
-      // Carousel scroll with looping
       function scrollCarousel(id, direction) {
         const container = document.getElementById(id);
         const scrollAmount = 300; // pixels
@@ -240,11 +242,11 @@
             card.className =
               "flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300";
 
-            //Image Element
+            // Image Element
             const image = document.createElement("img");
-            img.src = book.images?.frontPage || "";
-            img.class = "w-full h-36 object-cover";
-            img.alt = `Book ${book.bookId}`;
+            image.src = book.bookImages?.frontPage || "";
+            image.className = "w-full h-36 object-cover";
+            image.alt = `Book ${book.bookId}`;
 
             const contentDiv = document.createElement("div");
             contentDiv.className = "p-3";
@@ -255,7 +257,6 @@
 
             // Append elements to build the card
             contentDiv.appendChild(title);
-            // You can add more info here, e.g., startReadDate
             const datePara = document.createElement("p");
             datePara.className = "text-sm text-gray-400";
             datePara.textContent = `Started on: ${book.startReadDate}`;
@@ -269,7 +270,9 @@
           }
         });
       }
-      getBookJson();
+      document.addEventListener("DOMContentLoaded", () => {
+        getBookJson();
+      });
     </script>
   </body>
 </html>

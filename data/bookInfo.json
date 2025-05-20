@@ -137,13 +137,13 @@
   },
   {
     "bookId": "BK009",
-    "bookName": "The Future of Tech",
-    "bookCategory": ["Non-Fiction", "Technology"],
-    "bookReleaseDate": "2023-02-20",
+    "bookName": "A Thousand Splendid Suns",
+    "bookCategory": ["Fiction", "Technology"],
+    "bookReleaseDate": "2007-05-01",
     "noOfPages": 320,
     "bookAuthorId": "A009",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk009_front.jpg",
+      "frontPage": "../assets/a_thousand_splendid-suns.jpg",
       "backPage": "https://example.com/images/bk009_back.jpg"
     },
     "bookDescription": "Insights into emerging technological trends.",
@@ -154,13 +154,13 @@
   },
   {
     "bookId": "BK010",
-    "bookName": "Poetry of Life",
-    "bookCategory": ["Poetry"],
+    "bookName": "The  1000 Islands",
+    "bookCategory": ["Education"],
     "bookReleaseDate": "2016-04-17",
     "noOfPages": 150,
     "bookAuthorId": "A010",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk010_front.jpg",
+      "frontPage": "../assets/the_thousand_islands.jpg",
       "backPage": "https://example.com/images/bk010_back.jpg"
     },
     "bookDescription": "A collection of inspiring poems about life and love.",
