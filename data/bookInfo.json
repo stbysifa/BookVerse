@@ -7,7 +7,7 @@
     "noOfPages": 420,
     "bookAuthorId": "A001",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk001_front.jpg",
+      "frontPage": "../assets/the_lost_kingdom.jpg",
       "backPage": "https://example.com/images/bk001_back.jpg"
     },
     "bookDescription": "An epic adventure to find the lost kingdom hidden beyond the mountains.",
@@ -24,7 +24,7 @@
     "noOfPages": 280,
     "bookAuthorId": "A002",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk002_front.jpg",
+      "frontPage": "../assets/love_the_spring.jpg",
       "backPage": "https://example.com/images/bk002_back.jpg"
     },
     "bookDescription": "A heartfelt romantic story blossoming in spring.",
@@ -41,7 +41,7 @@
     "noOfPages": 390,
     "bookAuthorId": "A003",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk003_front.jpg",
+      "frontPage": "../assets/mysteries_of_the_deep.jpg",
       "backPage": "https://example.com/images/bk003_back.jpg"
     },
     "bookDescription": "Dive into the secrets lurking beneath the ocean surface.",
@@ -58,7 +58,7 @@
     "noOfPages": 460,
     "bookAuthorId": "A004",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk004_front.jpg",
+      "frontPage": "../assets/journeyTto_the_stars.jpg",
       "backPage": "https://example.com/images/bk004_back.jpg"
     },
     "bookDescription": "Exploring the vast universe beyond our planet.",
@@ -68,23 +68,6 @@
     "onPlatformDate": "2022-02-01"
   },
   {
-    "bookId": "BK005",
-    "bookName": "Culinary Dreams",
-    "bookCategory": ["Non-Fiction", "Cooking"],
-    "bookReleaseDate": "2018-11-11",
-    "noOfPages": 200,
-    "bookAuthorId": "A005",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk005_front.jpg",
-      "backPage": "https://example.com/images/bk005_back.jpg"
-    },
-    "bookDescription": "A collection of delicious recipes from around the world.",
-    "noOfReads": 1200,
-    "noOfLikes": 350,
-    "language": "English",
-    "onPlatformDate": "2018-12-01"
-  },
-  {
     "bookId": "BK006",
     "bookName": "The Silent Watcher",
     "bookCategory": ["Thriller", "Mystery"],
@@ -92,7 +75,7 @@
     "noOfPages": 330,
     "bookAuthorId": "A006",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk006_front.jpg",
+      "frontPage": "../assets/the_silent_watcher.jpg",
       "backPage": "https://example.com/images/bk006_back.jpg"
     },
     "bookDescription": "A suspenseful story of a detective uncovering hidden secrets.",
@@ -109,7 +92,7 @@
     "noOfPages": 410,
     "bookAuthorId": "A007",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk007_front.jpg",
+      "frontPage": "../assets/ancient_echoes.jpg",
       "backPage": "https://example.com/images/bk007_back.jpg"
     },
     "bookDescription": "A story woven through time about ancient civilizations.",
@@ -126,7 +109,7 @@
     "noOfPages": 180,
     "bookAuthorId": "A008",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk008_front.jpg",
+      "frontPage": "../assets/the_art_of_mindfulness.jpg",
       "backPage": "https://example.com/images/bk008_back.jpg"
     },
     "bookDescription": "Guidance on living a mindful and peaceful life.",
@@ -177,7 +160,7 @@
     "noOfPages": 290,
     "bookAuthorId": "A011",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk011_front.jpg",
+      "frontPage": "../assets/digital_nomad.jpg",
       "backPage": "https://example.com/images/bk011_back.jpg"
     },
     "bookDescription": "Guide to living and working remotely around the world.",
@@ -194,7 +177,7 @@
     "noOfPages": 370,
     "bookAuthorId": "A012",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk012_front.jpg",
+      "frontPage": "../assets/the_secret_garden.jpg",
       "backPage": "https://example.com/images/bk012_back.jpg"
     },
     "bookDescription": "A timeless story about healing and friendship.",
@@ -204,23 +187,6 @@
     "onPlatformDate": "2024-10-10"
   },
   {
-    "bookId": "BK013",
-    "bookName": "Rainforest Mysteries",
-    "bookCategory": ["Environmental", "Fiction"],
-    "bookReleaseDate": "2018-04-12",
-    "noOfPages": 410,
-    "bookAuthorId": "A013",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk013_front.jpg",
-      "backPage": "https://example.com/images/bk013_back.jpg"
-    },
-    "bookDescription": "An adventure exploring the secrets of rainforests.",
-    "noOfReads": 1700,
-    "noOfLikes": 470,
-    "language": "English",
-    "onPlatformDate": "2018-05-01"
-  },
-  {
     "bookId": "BK014",
     "bookName": "Mindful Eating",
     "bookCategory": ["Health", "Self-Help"],
@@ -228,7 +194,7 @@
     "noOfPages": 210,
     "bookAuthorId": "A014",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk014_front.jpg",
+      "frontPage": "../assets/mindeful_eating.jpg",
       "backPage": "https://example.com/images/bk014_back.jpg"
     },
     "bookDescription": "A guide to healthy and mindful eating habits.",
@@ -239,13 +205,13 @@
   },
   {
     "bookId": "BK015",
-    "bookName": "Urban Shadows",
-    "bookCategory": ["Mystery", "Drama"],
+    "bookName": "We All Want Impossible Things",
+    "bookCategory": ["Fiction", "Drama"],
     "bookReleaseDate": "2019-12-15",
     "noOfPages": 330,
     "bookAuthorId": "A015",
     "bookImages": {
-      "frontPage": "https://example.com/images/bk015_front.jpg",
+      "frontPage": "../assets/we_all_want_impossible_things.jpg",
       "backPage": "https://example.com/images/bk015_back.jpg"
     },
     "bookDescription": "A gripping story set in the shadows of the city.",
@@ -253,260 +219,5 @@
     "noOfLikes": 480,
     "language": "English",
     "onPlatformDate": "2020-01-10"
-  },
-  {
-    "bookId": "BK016",
-    "bookName": "History of Art",
-    "bookCategory": ["Non-Fiction", "Art"],
-    "bookReleaseDate": "2014-07-23",
-    "noOfPages": 500,
-    "bookAuthorId": "A016",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk016_front.jpg",
-      "backPage": "https://example.com/images/bk016_back.jpg"
-    },
-    "bookDescription": "A comprehensive overview of art history.",
-    "noOfReads": 1250,
-    "noOfLikes": 330,
-    "language": "English",
-    "onPlatformDate": "2024-08-01"
-  },
-  {
-    "bookId": "BK017",
-    "bookName": "The Cyber World",
-    "bookCategory": ["Technology", "Non-Fiction"],
-    "bookReleaseDate": "2023-04-10",
-    "noOfPages": 280,
-    "bookAuthorId": "A017",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk017_front.jpg",
-      "backPage": "https://example.com/images/bk017_back.jpg"
-    },
-    "bookDescription": "Exploring the impact of technology on society.",
-    "noOfReads": 950,
-    "noOfLikes": 210,
-    "language": "English",
-    "onPlatformDate": "2024-04-20"
-  },
-  {
-    "bookId": "BK018",
-    "bookName": "Sunset Serenade",
-    "bookCategory": ["Poetry"],
-    "bookReleaseDate": "2013-09-10",
-    "noOfPages": 140,
-    "bookAuthorId": "A018",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk018_front.jpg",
-      "backPage": "https://example.com/images/bk018_back.jpg"
-    },
-    "bookDescription": "Poems inspired by sunsets and twilight.",
-    "noOfReads": 1000,
-    "noOfLikes": 270,
-    "language": "English",
-    "onPlatformDate": "2024-10-01"
-  },
-  {
-    "bookId": "BK019",
-    "bookName": "Wildlife Wonders",
-    "bookCategory": ["Environmental", "Non-Fiction"],
-    "bookReleaseDate": "2019-05-05",
-    "noOfPages": 370,
-    "bookAuthorId": "A019",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk019_front.jpg",
-      "backPage": "https://example.com/images/bk019_back.jpg"
-    },
-    "bookDescription": "Photographic journey through the animal kingdom.",
-    "noOfReads": 1600,
-    "noOfLikes": 430,
-    "language": "English",
-    "onPlatformDate": "2019-06-01"
-  },
-  {
-    "bookId": "BK020",
-    "bookName": "Cooking with Herbs",
-    "bookCategory": ["Cooking", "Non-Fiction"],
-    "bookReleaseDate": "2020-03-18",
-    "noOfPages": 220,
-    "bookAuthorId": "A020",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk020_front.jpg",
-      "backPage": "https://example.com/images/bk020_back.jpg"
-    },
-    "bookDescription": "Enhance your dishes with fresh herbs and flavors.",
-    "noOfReads": 1300,
-    "noOfLikes": 370,
-    "language": "English",
-    "onPlatformDate": "2020-04-01"
-  },
-  {
-    "bookId": "BK021",
-    "bookName": "Dreamscape",
-    "bookCategory": ["Fantasy"],
-    "bookReleaseDate": "2018-12-01",
-    "noOfPages": 380,
-    "bookAuthorId": "A021",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk021_front.jpg",
-      "backPage": "https://example.com/images/bk021_back.jpg"
-    },
-    "bookDescription": "A fantastical world of dreams and adventures.",
-    "noOfReads": 1800,
-    "noOfLikes": 520,
-    "language": "English",
-    "onPlatformDate": "2018-12-15"
-  },
-  {
-    "bookId": "BK022",
-    "bookName": "Fitness Fundamentals",
-    "bookCategory": ["Health", "Non-Fiction"],
-    "bookReleaseDate": "2021-07-07",
-    "noOfPages": 250,
-    "bookAuthorId": "A022",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk022_front.jpg",
-      "backPage": "https://example.com/images/bk022_back.jpg"
-    },
-    "bookDescription": "Basics of maintaining a healthy lifestyle.",
-    "noOfReads": 1450,
-    "noOfLikes": 390,
-    "language": "English",
-    "onPlatformDate": "2021-07-20"
-  },
-  {
-    "bookId": "BK023",
-    "bookName": "Quantum Realities",
-    "bookCategory": ["Science", "Non-Fiction"],
-    "bookReleaseDate": "2022-09-10",
-    "noOfPages": 290,
-    "bookAuthorId": "A023",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk023_front.jpg",
-      "backPage": "https://example.com/images/bk023_back.jpg"
-    },
-    "bookDescription": "An exploration of quantum physics and its implications.",
-    "noOfReads": 800,
-    "noOfLikes": 180,
-    "language": "English",
-    "onPlatformDate": "2022-09-15"
-  },
-  {
-    "bookId": "BK024",
-    "bookName": "The Art of Negotiation",
-    "bookCategory": ["Self-Help", "Business"],
-    "bookReleaseDate": "2019-11-11",
-    "noOfPages": 310,
-    "bookAuthorId": "A024",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk024_front.jpg",
-      "backPage": "https://example.com/images/bk024_back.jpg"
-    },
-    "bookDescription": "Strategies for effective negotiation in business and life.",
-    "noOfReads": 1400,
-    "noOfLikes": 410,
-    "language": "English",
-    "onPlatformDate": "2019-12-01"
-  },
-  {
-    "bookId": "BK025",
-    "bookName": "Seaside Serenity",
-    "bookCategory": ["Fiction", "Romance"],
-    "bookReleaseDate": "2017-06-21",
-    "noOfPages": 340,
-    "bookAuthorId": "A025",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk025_front.jpg",
-      "backPage": "https://example.com/images/bk025_back.jpg"
-    },
-    "bookDescription": "A romantic story set by the tranquil sea.",
-    "noOfReads": 2100,
-    "noOfLikes": 600,
-    "language": "English",
-    "onPlatformDate": "2017-07-01"
-  },
-  {
-    "bookId": "BK026",
-    "bookName": "The Innovator's Mindset",
-    "bookCategory": ["Business", "Self-Help"],
-    "bookReleaseDate": "2020-10-10",
-    "noOfPages": 270,
-    "bookAuthorId": "A026",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk026_front.jpg",
-      "backPage": "https://example.com/images/bk026_back.jpg"
-    },
-    "bookDescription": "Fostering creativity and innovation in your career.",
-    "noOfReads": 1600,
-    "noOfLikes": 440,
-    "language": "English",
-    "onPlatformDate": "2020-10-20"
-  },
-  {
-    "bookId": "BK027",
-    "bookName": "The Night Sky",
-    "bookCategory": ["Science", "Non-Fiction"],
-    "bookReleaseDate": "2015-11-11",
-    "noOfPages": 320,
-    "bookAuthorId": "A027",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk027_front.jpg",
-      "backPage": "https://example.com/images/bk027_back.jpg"
-    },
-    "bookDescription": "A guide to understanding the stars and planets.",
-    "noOfReads": 1300,
-    "noOfLikes": 350,
-    "language": "English",
-    "onPlatformDate": "2024-12-01"
-  },
-  {
-    "bookId": "BK028",
-    "bookName": "Cultural Journeys",
-    "bookCategory": ["Travel", "Non-Fiction"],
-    "bookReleaseDate": "2018-09-05",
-    "noOfPages": 410,
-    "bookAuthorId": "A028",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk028_front.jpg",
-      "backPage": "https://example.com/images/bk028_back.jpg"
-    },
-    "bookDescription": "Experiences from various cultures around the world.",
-    "noOfReads": 1700,
-    "noOfLikes": 480,
-    "language": "English",
-    "onPlatformDate": "2018-09-20"
-  },
-  {
-    "bookId": "BK029",
-    "bookName": "Mental Fitness",
-    "bookCategory": ["Health", "Self-Help"],
-    "bookReleaseDate": "2021-03-03",
-    "noOfPages": 230,
-    "bookAuthorId": "A029",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk029_front.jpg",
-      "backPage": "https://example.com/images/bk029_back.jpg"
-    },
-    "bookDescription": "Techniques to improve mental resilience and clarity.",
-    "noOfReads": 1400,
-    "noOfLikes": 390,
-    "language": "English",
-    "onPlatformDate": "2021-03-15"
-  },
-  {
-    "bookId": "BK030",
-    "bookName": "The Last Voyage",
-    "bookCategory": ["Fiction", "Adventure"],
-    "bookReleaseDate": "2014-04-12",
-    "noOfPages": 380,
-    "bookAuthorId": "A030",
-    "bookImages": {
-      "frontPage": "https://example.com/images/bk030_front.jpg",
-      "backPage": "https://example.com/images/bk030_back.jpg"
-    },
-    "bookDescription": "A story of exploration and discovery on the high seas.",
-    "noOfReads": 2000,
-    "noOfLikes": 550,
-    "language": "English",
-    "onPlatformDate": "2024-05-01"
   }
 ]

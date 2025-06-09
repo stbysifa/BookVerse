@@ -10,15 +10,6 @@
         "currentPage": 120,
         "notes": "Engaging story, eager to see the ending.",
         "liked": true
-      },
-      {
-        "bookId": "BK005",
-        "readList": true,
-        "startReadDate": "2023-06-15",
-        "completed": true,
-        "currentPage": 370,
-        "notes": "Loved the recipes!",
-        "liked": true
       }
     ]
   },
@@ -95,16 +86,7 @@
     "uid": "user005",
     "bookInfo": [
       {
-        "bookId": "BK020",
-        "readList": true,
-        "startReadDate": "2023-07-20",
-        "completed": false,
-        "currentPage": 60,
-        "notes": "Great tips for cooking.",
-        "liked": true
-      },
-      {
-        "bookId": "BK025",
+        "bookId": "BK014",
         "readList": false,
         "startReadDate": null,
         "completed": false,

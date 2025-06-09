@@ -23,12 +23,20 @@
     <header class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold">My Dashboard</h1>
       <div class="flex space-x-4 items-center">
-        <button
-          onclick="toggleTheme()"
-          class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition"
-        >
-          Toggle Theme
-        </button>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            id="darkToggle"
+            class="sr-only peer"
+            onchange="toggleDarkMode()"
+          />
+          <div
+            class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 dark:bg-gray-700 rounded-full peer dark:peer-checked:bg-blue-600 peer-checked:bg-blue-600 transition-all duration-300"
+          ></div>
+          <div
+            class="absolute left-1 top-1 bg-white dark:bg-gray-300 w-4 h-4 rounded-full transition-all duration-300 peer-checked:translate-x-5"
+          ></div>
+        </label>
         <div class="relative">
           <input
             type="text"
@@ -53,11 +61,6 @@
             </svg>
           </div>
         </div>
-        <img
-          src="https://via.placeholder.com/40"
-          alt="Profile"
-          class="w-10 h-10 rounded-full"
-        />
       </div>
     </header>
 
@@ -125,71 +128,8 @@
           <div
             id="continueReading"
             class="flex hide-scrollbar overflow-x-auto scrollbar-hide space-x-4 px-2"
-          >
-            <div
-              class="flex-shrink-0 w-48 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
-            >
-              <img
-                src="https://via.placeholder.com/200x120"
-                class="w-full h-40 object-cover"
-                alt="Book 1"
-              />
-              <div class="p-3">
-                <h3 class="text-lg font-semibold mb-2">Book 1</h3>
-                <p class="text-sm text-gray-400">Author</p>
-              </div>
-            </div>
-            <div
-              class="flex-shrink-0 w-48 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300"
-            >
-              <img
-                src="https://via.placeholder.com/200x120"
-                class="w-full h-40 object-cover"
-                alt="Book 2"
-              />
-              <div class="p-3">
-                <h3 class="text-lg font-semibold mb-2">Book 2</h3>
-                <p class="text-sm text-gray-400">Author</p>
-              </div>
-            </div>
-          </div>
-          <!-- Buttons -->
-          <button
-            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
-            onclick="scrollCarousel('continueReading', -1)"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-70 p-3 rounded-full hover:bg-opacity-100 transition hidden group-hover:block"
-            onclick="scrollCarousel('continueReading', 1)"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+          ></div>
+          <!-- Navigation buttons omitted for brevity -->
         </div>
       </section>
 
@@ -197,10 +137,12 @@
     </main>
 
     <script>
-      function toggleTheme() {
+      function toggleDarkMode() {
         document.documentElement.classList.toggle("dark");
-        document.body.classList.toggle("bg-gray-900");
-        document.body.classList.toggle("text-gray-100");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
       }
 
       function scrollCarousel(id, direction) {
@@ -240,12 +182,12 @@
           if (book.onPlatformDate && isWithinRange(book.onPlatformDate)) {
             const card = document.createElement("div");
             card.className =
-              "flex-shrink-0 w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300";
+              "flex-shrink-0 w-[24rem] h-[44rem] bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300";
 
             // Image Element
             const image = document.createElement("img");
             image.src = book.bookImages?.frontPage || "";
-            image.className = "w-full h-36 object-cover";
+            image.className = "w-full h-[38rem] object-cover";
             image.alt = `Book ${book.bookId}`;
 
             const contentDiv = document.createElement("div");
@@ -259,7 +201,7 @@
             contentDiv.appendChild(title);
             const datePara = document.createElement("p");
             datePara.className = "text-sm text-gray-400";
-            datePara.textContent = `Started on: ${book.startReadDate}`;
+            datePara.textContent = `Book Released on: ${book.bookReleaseDate}`;
             contentDiv.appendChild(datePara);
 
             card.appendChild(image);
@@ -270,8 +212,106 @@
           }
         });
       }
+      async function loadContinueReading() {
+        try {
+          // Fetch data
+          const [userDataRes, booksDataRes] = await Promise.all([
+            fetch("data/bookUserData.json"),
+            fetch("data/bookInfo.json"),
+          ]);
+          const userData = await userDataRes.json();
+          const booksData = await booksDataRes.json();
+
+          // Get current logged-in user
+          const loggedInUser = localStorage.getItem("loggedInUser")
+            ? JSON.parse(localStorage.getItem("loggedInUser"))
+            : null;
+
+          if (!loggedInUser) {
+            console.log("No user logged in");
+            return;
+          }
+
+          // Find user record
+          const userRecord = Array.isArray(userData)
+            ? userData.find((u) => u.uid === loggedInUser.uid)
+            : (userData.users || []).find((u) => u.uid === loggedInUser.uid);
+
+          if (!userRecord || !userRecord.bookInfo) {
+            console.log("No books in progress for user");
+            return;
+          }
+
+          const container = document.getElementById("continueReading");
+          container.innerHTML = ""; // Clear previous
+
+          // Loop through user's books
+          userRecord.bookInfo.forEach((bookStatus) => {
+            if (bookStatus.readList && !bookStatus.completed) {
+              const bookDetails = booksData.find(
+                (b) => b.bookId === bookStatus.bookId
+              );
+              if (bookDetails) {
+                // Create card
+                const card = document.createElement("div");
+                card.className =
+                  "flex-shrink-0 w-[24rem] h-[44rem] bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition duration-300";
+
+                // Image
+                const img = document.createElement("img");
+                img.src = bookDetails.bookImages?.frontPage || "";
+                img.className = "w-full h-[38rem] object-cover";
+                img.alt = bookDetails.bookName;
+
+                // Info container
+                const infoDiv = document.createElement("div");
+                infoDiv.className = "p-2";
+
+                // Title
+                const title = document.createElement("h3");
+                title.className = "text-lg font-semibold mb-1";
+                title.innerText = bookDetails.bookName || "Unknown Title";
+
+                // Current page
+                const pageInfo = document.createElement("p");
+                pageInfo.className = "text-sm text-gray-400";
+                pageInfo.innerText = `Page ${bookStatus.currentPage}`;
+
+                infoDiv.appendChild(title);
+                infoDiv.appendChild(pageInfo);
+
+                // Append to card
+                card.appendChild(img);
+                card.appendChild(infoDiv);
+
+                // Append card to container
+                container.appendChild(card);
+              }
+            }
+          });
+        } catch (error) {
+          console.error("Error loading data:", error);
+        }
+      }
       document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        const toggle = document.getElementById("darkToggle");
+        if (savedTheme) {
+          if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+            toggle.checked = true;
+          } else {
+            document.documentElement.classList.remove("dark");
+            toggle.checked = false;
+          }
+        } else {
+          // If no theme saved, default to light (remove 'dark')
+          document.documentElement.classList.remove("dark");
+          toggle.checked = false;
+        }
+
         getBookJson();
+        loadContinueReading();
       });
     </script>
   </body>
